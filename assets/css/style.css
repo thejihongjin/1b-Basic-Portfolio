@@ -1,50 +1,45 @@
-/*
-
-1. Colors:
-   * Teal color (used for headings and backgrounds): `#4aaaa5`
-   * Regular font color (used for paragraphs and all text besides the headings): `#777777`
-
-*/
-
-
 body {
     background-image: url("../images/bananas.png");
     margin: 0 auto;
+    min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
-#header {
+.header {
+    width: auto;
     background-color: #ffffff;
     border-bottom: 2px solid #cccccc;
-    width: 100%;
-    /*height: 50px;
-    line-height: 50px;*/
-    margin-bottom: 25px; /* test number */
+    margin-bottom: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
 }
 
-.headerName {
-    width: 960px;
-    box-sizing: border-box; /*includes padding and border in the total width and height*/
-    margin: 0 auto;
-    position: relative;
+.headerContent {
+	width: 960px;
+	display: flex;
+	justify-content: space-between;
 }
 
 h1 {
     background-color: #4aaaa5;
     padding: 20px;
     margin: 0 auto;
-    display: inline-block; /*fits div to content*/
 }
 
-.headerNav {
+ul {
     margin: 0 auto;
-    float: right;
+	width: auto;
+	flex-grow: 2;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 }
-.headerNav li{
+
+li{
     display: inline-block;
-    text-align: right;
     padding: 10px;
-    list-style-type: none;
-    vertical-align: middle;
 }
 
 a {
@@ -56,10 +51,12 @@ a {
     width: 960px;
     box-sizing: border-box; /*includes padding and border in the total width and height*/
     margin: auto; /*with set width, auto margin will split remaining space and "center" element*/
-    padding: 25px; /* test number */
+    padding: 25px;
     background-color: #ffffff;
     border: 0.5px solid #dddddd;
+	flex: 1 0 auto;
 }
+
 .mainContent {
     padding: 25px;
 }
@@ -69,23 +66,42 @@ h2 {
 }
 
 img {
-    height: auto;
     width: 300px;
+    height: auto;
 }
 
 #jihongImg {
     float: left;
+	padding-right: 15px;
+}
+
+p {
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+.imgFlexbox {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
 }
 
 .imgBox {
-    
+    width: 300px;
+    margin: 0;
+    margin-right: 40px;
 }
 
 .imgCaption {
     background-color: #4aaaa5;
     color: white;
     width: 300px;
+    margin: 0 auto;
+    padding: 10px 0;
     text-align: center;
+    position: relative;
+    bottom: 60px;
+    z-index: 5;
 }
 
 input, textarea {
@@ -111,10 +127,10 @@ button {
     background-color: #666666;
     border-top: 8px solid #4aaaa5;
     width: 100%;
-    margin-top: 25px; /* test number */
+    margin-top: 25px;
     padding: 25px;
     text-align: center;
-    /*Make a "sticky footer." A sticky footer tutorial can be found [here](https://css-tricks.com/couple-takes-sticky-footer/).*/
+	flex-shrink: 0;
 }
 
 .headingText {
